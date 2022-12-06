@@ -1,57 +1,46 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import ActionRow from "$components/ActionRow";
+import Button from "$components/Button";
+import Content from "$components/Content";
+import Image from "next/image";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
+    <Content>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+      <p>
+        Lorem ipsum dolor sit amet, incididunt reprehenderit sint sit anim
+        incididunt exercitation id ea adipisicing incididunt voluptate ipsum
+        eiusmod. Lorem proident reprehenderit sint excepteur aliquip amet
+        pariatur elit. Eiusmod qui quis mollit laboris in ex ut fugiat enim elit
+        eiusmod culpa cupidatat pariatur. Cupidatat ea ipsum consectetur
+        incididunt proident. Sint ex minim ut cillum aliqua reprehenderit
+        officia esse officia minim reprehenderit enim magna.
+      </p>
+      <p>
+        Irure consequat nulla sint duis laboris sit exercitation enim. Et tempor
+        nisi voluptate do ut et velit consequat veniam. Tempor quis excepteur
+        nulla sunt veniam anim aliquip do laborum excepteur in duis aliquip
+        pariatur nostrud. Aute ex aliquip cillum qui dolor quis laborum dolor et
+        qui aliqua aliqua. Quis dolor nostrud proident mollit enim anim ipsum ad
+        qui commodo quis exercitation excepteur proident in. Esse elit deserunt
+        ullamco non nisi magna aliqua nulla fugiat ipsum. Aliquip sunt officia
+        fugiat eiusmod dolor velit veniam.
+      </p>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+      <ActionRow>
+        <Button type="Primary" onClick={() => alert("Alert")}>
+          Regular button
+        </Button>
+        <Button type="Secondary" href="https://github.com/Morgan-GB">
+          Link button
+        </Button>
+      </ActionRow>
+    </Content>
+  );
 }
