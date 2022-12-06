@@ -1,0 +1,62 @@
+.header {
+  background-color: $accent;
+  padding: 20px;
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: darken($accent, 55%);
+
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.75rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  h5 {
+    font-size: 2.25rem;
+  }
+
+  h6 {
+    font-size: 2rem;
+  }
+}
+
+.hero {
+  height: 100vh;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 4.75rem;
+  }
+
+  h3 {
+    font-size: 4.5rem;
+  }
+
+  h4 {
+    font-size: 4.25rem;
+  }
+
+  h5 {
+    font-size: 4rem;
+  }
+
+  h6 {
+    font-size: 3.75rem;
+  }
+}
