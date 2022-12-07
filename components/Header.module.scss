@@ -9,6 +9,7 @@
   min-height: 15rem;
   color: $accent;
   margin-bottom: 1rem;
+  border-radius: 0 0 2vh 2vh;
 
   h1 {
     font-size: 3.25rem;
@@ -36,7 +37,7 @@
 }
 
 .hero {
-  height: 100vh;
+  height: 102vh;
 
   h1 {
     font-size: 5rem;
