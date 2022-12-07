@@ -1,0 +1,36 @@
+.nav {
+  max-height: fit-content;
+  height: 3rem;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $black;
+  border: 2px solid rgba($white, 0.075);
+  padding: 0 1.5rem;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  height: 100%;
+  list-style: none;
+}
+
+.navLink {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: $white;
+  transition: all 0.25s ease;
+  text-align: center;
+
+  &:hover {
+    font-weight: 800;
+    color: lighten($accent, 50%);
+    text-decoration: none;
+  }
+}
