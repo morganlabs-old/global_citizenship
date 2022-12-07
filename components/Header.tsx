@@ -1,3 +1,4 @@
+import Content from "./Content";
 import styles from "./Header.module.scss";
 
 interface HeaderProps {

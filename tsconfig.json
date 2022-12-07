@@ -25,6 +25,8 @@
       "$styles/*": ["styles/*"],
       "$components": ["components"],
       "$components/*": ["components/*"],
+      "$lib": ["lib"],
+      "$lib/*": ["lib/*"],
       "$public": ["public"],
       "$public/*": ["public/*"]
     }

@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       <Header hero>
-        <h1>Hello, world</h1>
+        <div className={styles.suptitle}>LET'S TALK ABOUT</div>
+        <h1>Europe&apos;s Refugee Crisis.</h1>
       </Header>
       <Content>
         <h1>Heading 1</h1>
@@ -38,14 +39,14 @@ export default function Home() {
           ipsum. Aliquip sunt officia fugiat eiusmod dolor velit veniam.
         </p>
 
-        <ActionRow>
+        {/* <ActionRow>
           <Button type="Primary" onClick={() => alert("Alert")}>
             Regular button
           </Button>
           <Button type="Secondary" href="https://github.com/Morgan-GB">
             Link button
           </Button>
-        </ActionRow>
+        </ActionRow> */}
       </Content>
     </>
   );

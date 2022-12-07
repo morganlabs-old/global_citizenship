@@ -1,3 +1,9 @@
-$white: #f5f2f2;
-$black: #161515;
-$accent: #add9bc;
+$white: #d5f3da;
+$black: #060f02;
+$accent: #2b9b69;
+
+:export {
+  white: $white;
+  black: $black;
+  accent: $accent;
+}
