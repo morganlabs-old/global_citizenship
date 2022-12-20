@@ -4,6 +4,7 @@ import {
   VerticalColumn,
   VerticalColumnContainer,
 } from "$components/VerticalColumns";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -39,9 +40,9 @@ export default function Home() {
             An asylum seeker is someone who is seeking asylum in another
             country. These people are very similar to refugees, however they
             have not recieved{" "}
-            <a href="https://www.gov.uk/claim-asylum#:~:text=You%20must%20apply%20for%20asylum,is%20eligible%20to%20claim%20asylum.">
+            <Link href="https://www.gov.uk/claim-asylum#:~:text=You%20must%20apply%20for%20asylum,is%20eligible%20to%20claim%20asylum.">
               refugee status
-            </a>
+            </Link>
             .
           </p>
           <p>
@@ -59,9 +60,9 @@ export default function Home() {
           you can help people fleeing their countries.
         </p>
 
-        <h1>What&apos;s the issue?</h1>
+        <h1 id="whats-the-issue">What&apos;s the issue?</h1>
         <p>
-          When a place is in war, a lot of its population do not wish to
+          When a country is in war, a lot of its population do not wish to
           continue to live there in conflict, as their lives may be at risk.
           This is why a lot of people choose to seek asylum and become refugees
           in other countries. This alone is not the issue. The issue arises with
@@ -73,10 +74,64 @@ export default function Home() {
           legal boats and aeroplanes. Sea conditions change constantly, what may
           be a calm sea one second may become a stormy, violent sea the next.
           This is how{" "}
-          <a href="https://news.sky.com/story/channel-migrants-uk-must-make-itself-less-attractive-to-those-crossing-french-interior-minister-says-12481675">
+          <Link href="https://news.sky.com/story/channel-migrants-uk-must-make-itself-less-attractive-to-those-crossing-french-interior-minister-says-12481675">
             27 people died
-          </a>{" "}
+          </Link>{" "}
           in 2021 whilst attempting to cross the English Channel.{" "}
+        </p>
+        <p>
+          The issue has gotten so out of hand that the French interior minister
+          has said that the UK must{" "}
+          <Link href="https://news.sky.com/story/channel-migrants-uk-must-make-itself-less-attractive-to-those-crossing-french-interior-minister-says-12481675">
+            make itself &quot;less economically attractive&quot;
+          </Link>
+          , saying France will not be &quot;held hostage&quot; by British
+          domestic politics.
+        </p>
+        <p>
+          <b>This isn&apos;t the only issue.</b>
+        </p>
+        <p>
+          When people are seeking refugee status, they&apos;re being treated as
+          someone else&apos;s problem. Some governments may ignore their
+          requests and deny perfectly valid ones.
+        </p>
+        <p>
+          Not to mention, some people are fearful of being &quot;flooded&quot;
+          with refugees. Some people think that refugees may ruin the economy,
+          culture, etc., despite the fact that without the ability to seek
+          refuge in other countries, they may die.
+        </p>
+
+        <h1>What can we do to help?</h1>
+        <p>
+          A lot of what needs to be done needs to happen at a higher level than
+          most of us, at a governmental level. However, this doesn&apos;t mean
+          that we can&apos;t raise awareness and help people in conflict escape
+          their countries <b>legally</b>.
+        </p>
+
+        <h2>Campaign.</h2>
+        <p>
+          <Link href="refugee-action.org.uk">Refugee Action</Link> is
+          campaigning to give the opportunity for{" "}
+          <Link href="https://www.refugee-action.org.uk/let-refugees-learn/">
+            more refugees to learn English
+          </Link>
+          , and to make changes to the law to{" "}
+          <Link href="https://www.refugee-action.org.uk/campaigns/family_reunion/">
+            reunite separated refugee families
+          </Link>
+          .
+        </p>
+        <h2>Welcome Refugees.</h2>
+        <p></p>
+
+        <h1>What can the &quot;higher ups&quot; do?</h1>
+        <p>
+          Most of us cannot make large-scale change that makes refugees
+          travelling to Europe easier, as much as we may want to. &quot;higher
+          ups&quot; in our government need to make these changes.
         </p>
       </Content>
     </>
