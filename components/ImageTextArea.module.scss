@@ -1,0 +1,33 @@
+.imageTextArea {
+  display: flex;
+  width: clamp(25rem, 60rem, 98%);
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  & * {
+    flex: 1;
+  }
+}
+
+.image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.content {
+  margin: auto 0;
+}
+
+@media (max-width: 1000px) {
+  .imageTextArea {
+    flex-direction: column;
+    width: clamp(25rem, 50rem, 95%);
+  }
+
+  .image {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}

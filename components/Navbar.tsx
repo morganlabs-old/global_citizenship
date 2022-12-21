@@ -24,6 +24,10 @@ export default function Navbar({
       name: "The issue",
       href: "/#whats-the-issue",
     },
+    {
+      name: "Help",
+      href: "/#how-to-help",
+    },
   ],
 }: NavbarProps) {
   return (
