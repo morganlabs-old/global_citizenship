@@ -1,3 +1,5 @@
+'use client';
+
 import { MouseEventHandler } from "react";
 import styles from "./Button.module.scss";
 
@@ -19,9 +21,9 @@ export default function Button({ children, href, onClick, type }: ButtonProps) {
       </a>
     );
   }
-  // else if (onClick) {
-  //   return <button onClick={onClick}>{children}</button>;
-  // }
+  else if (onClick) {
+    return <button className={`${styles.button} ${btnType}`} onClick={onClick}>{children}</button>;
+  }
   else {
     return (
       <button className={`${styles.button} ${styles.unavailable}`}>

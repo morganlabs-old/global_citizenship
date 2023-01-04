@@ -1,3 +1,5 @@
+"use client";
+
 import Content from "$components/Content";
 import Header from "$components/Header";
 import ImageTextArea from "$components/ImageTextArea";
@@ -8,12 +10,70 @@ import {
 import Link from "next/link";
 import styles from "./page.module.scss";
 
+import Button from "$components/Button";
+import Popup from "$components/Popup";
 import refugees1 from "$public/images/refugees_1.webp";
 import refugeesWelcome from "$public/images/refugees_welcome.jpg";
+import { useState } from "react";
 
 export default function Home() {
+  let [charitiesPopup, setCharitiesPopup] = useState(false);
+
+  const toggleCharities = () => setCharitiesPopup((c) => !c);
+
+  const popup = (
+    <Popup>
+      <div
+        style={{
+          // width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <h1>Charities</h1>
+        <a
+          onClick={toggleCharities}
+          style={{
+            fontWeight: 700,
+            opacity: 0.5,
+            fontSize: "0.85rem",
+            cursor: "pointer",
+          }}
+          className={styles.close}
+        >
+          CLOSE
+        </a>
+      </div>
+      <p>
+        Below is a list of charities designed to help support refugees, asylum
+        seekers and those currently living in war-torn countries.
+      </p>
+      <ul>
+        <li>
+          <Link href="https://www.unhcr.org/">
+            The United Nations High Commissioner for Refugees (UNHCR)
+          </Link>
+        </li>
+        <li>
+          <Link href="https://www.rescue.org/">
+            The International Rescue Committee (IRC)
+          </Link>
+        </li>
+        <li>
+          <Link href="https://www.savethechildren.org/">Save the Children</Link>
+        </li>
+        <li>
+          <Link href="https://refugeerights.org/">
+            International Refugee Assistance Project (IRAP)
+          </Link>
+        </li>
+      </ul>
+    </Popup>
+  );
+
   return (
     <>
+      {charitiesPopup && popup}
       <Header id="hero" hero>
         <div className={styles.suptitle}>Lets talk about</div>
         <h1 className="withSuptitle">Europe&apos;s Refugee Crisis.</h1>
@@ -30,7 +90,7 @@ export default function Home() {
         <p>
           The terms &quot;refuge&quot; and &quot;asylum seeker&quot; tend to get
           mixed up a lot. If you&apos;re unaware of the difference, you can read
-          about the definitions of these words below.
+          the definitions of these words below.
         </p>
       </Content>
 
@@ -38,18 +98,18 @@ export default function Home() {
         <VerticalColumn>
           <h2>Refugees</h2>
           <p>
-            A refugee is a person who has fled their country due to serious risk
-            of human rights violations or persecution. The risks of these people
-            staying at their home country are so high that they felt the need to
-            leave to seek safety, because their government cannot or will not
-            protect them from these dangers.
+            A refugee is a person who has fled their country due to a serious
+            risk of human rights violations or persecution. The risks of these
+            people staying in their home country are so high that they felt the
+            need to leave to seek safety because their government cannot or will
+            not protect them from these dangers.
           </p>
         </VerticalColumn>
         <VerticalColumn>
           <h2>Asylum Seekers</h2>
           <p>
             An asylum seeker is someone who is seeking asylum in another
-            country. These people are very similar to refugees, however they
+            country. These people are very similar to refugees, however, they
             have not received{" "}
             <Link href="https://www.gov.uk/claim-asylum#:~:text=You%20must%20apply%20for%20asylum,is%20eligible%20to%20claim%20asylum.">
               refugee status
@@ -76,7 +136,7 @@ export default function Home() {
 
       <ImageTextArea src={refugees1} alt="">
         <p>
-          When a country is in war, a lot of its population do not wish to
+          When a country is at war, a lot of its population does not wish to
           continue to live there in conflict, as their lives may be at risk.
           This is why a lot of people choose to seek asylum and become refugees
           in other countries. This alone is not the issue. The issue arises with
@@ -121,8 +181,8 @@ export default function Home() {
         <p>
           Not to mention, some people are fearful of being &quot;flooded&quot;
           with refugees. Some people think that refugees may ruin the economy,
-          culture, etc., despite the fact that without the ability to seek
-          refuge in other countries, they may die.
+          culture, etc., even though without the ability to seek refuge in other
+          countries, they may die.
         </p>
 
         <h1 id="how-to-help">What can we do to help?</h1>
@@ -133,10 +193,10 @@ export default function Home() {
           their countries <b>legally</b>.
         </p>
 
-        <h2>Campaign.</h2>
+        <h2>1. Campaign</h2>
         <p>
           <Link href="refugee-action.org.uk">Refugee Action</Link> is
-          campaigning to give the opportunity for{" "}
+          campaigning to allow{" "}
           <Link href="https://www.refugee-action.org.uk/let-refugees-learn/">
             more refugees to learn English
           </Link>
@@ -146,7 +206,8 @@ export default function Home() {
           </Link>
           .
         </p>
-        <h2>House refugees.</h2>
+
+        <h2>2. House refugees</h2>
       </Content>
 
       <ImageTextArea src={refugeesWelcome} alt="" right>
@@ -155,7 +216,7 @@ export default function Home() {
           you to house refugees or asylum seekers.{" "}
           <Link href="https://www.refugeesathome.org/">Refugees at Home</Link>{" "}
           is a programme that connects refugees to those with room to spare in
-          their house.
+          their houses.
         </p>
         <p>Before you house a refugee, consider a few factors:</p>
         <ul>
@@ -166,20 +227,31 @@ export default function Home() {
       </ImageTextArea>
 
       <Content>
+        <h2>3. Donate</h2>
+        <p>
+          Donating is a great way to make a <i>larger</i> change in a
+          refugee&apos;s life. By donating to charities that help refugees, you
+          allow that charity to go and do work to actively help people.
+        </p>
+        <Button type="Primary" onClick={toggleCharities}>
+          View Charities
+        </Button>
+
         <h2>Some other ideas</h2>
         <ul>
-          <li>Encourage your university to offer refugee scholarships</li>
-          <li>Offer opportunities for refugees, like volunteering</li>
-          <li>Donate to charities that support refugees</li>
+          <li>Encourage local universities to offer refugee scholarships</li>
+          <li>
+            Offer opportunities to/for refugees, like volunteering or jobs
+          </li>
         </ul>
 
         <div className="seperator" />
 
-        <h1>What can the &quot;higher ups&quot; do?</h1>
+        <h1>What can the &quot;higher-ups&quot; do?</h1>
         <p>
-          Most of us cannot make large-scale change that makes refugees
-          travelling to Europe easier, as much as we may want to. &quot;higher
-          ups&quot; in our government need to make these changes.
+          Most of us cannot make the large-scale change that refugees need to
+          make travelling to Europe easier, as much as we may want to.
+          &quot;Higher-ups&quot; in our government need to make these changes.
         </p>
 
         <ul>
@@ -188,29 +260,47 @@ export default function Home() {
             <br />
             The reason a lot of refugees take dangerous entry methods into
             Europe is because of the inability to find safe and legal methods.
-            Giving refugees visas prevents them spending their savings and
+            Giving refugees visas prevents them from spending their savings and
             risking their lives getting to safety.
           </li>
-          {/* <li>
-            <b></b>
+          <li>
+            <b>Go to refugees, if at all possible.</b>
             <br />
+            When countries make an effort to go to possible refugees themselves
+            (by possibly going to countries in war), it means that they do not
+            have to spend their life savings to get to a place of safety and
+            security. Investing in Search &amp; Rescue teams can be crucial to
+            people&apos;s survival.
+            <br />
+            Of course, this is not always possible. Some countries in war may
+            make threats to other countries, stating that they too will be
+            attacked if they attempt to assist.
           </li>
           <li>
-            <b></b>
+            <b>
+              Make it <i>easier</i> to cross borders.
+            </b>
             <br />
+            We have borders for a reason: to protect those within the country.
+            However, pushing people away and putting up large fences and other
+            physical blockages doesn&apos;t stop people from attempting entry,
+            it just makes them take other more dangerous routes. When an asylum
+            seeker shows up at the borders, offering them a temporary residence
+            for their safety, with or without travel documents, should be the
+            bare minimum.
           </li>
           <li>
-            <b></b>
+            <b>
+              Stop blaming certain issues, like economic or social problems, on
+              refugees.
+            </b>
             <br />
+            This isn&apos;t just unfair to the refugees who simply need a place
+            to survive, it also generates a sense of fear of foreigners.
+            Governments should be battling all kinds of xenophobia and racial
+            discrimination, not promoting it.
           </li>
-          <li>
-            <b></b>
-            <br />
-          </li> */}
         </ul>
-
-        <h2>Resettlement.</h2>
-        <p></p>
       </Content>
     </>
   );
